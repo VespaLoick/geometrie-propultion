@@ -6,6 +6,7 @@ public class joeurcube : MonoBehaviour
 {
     public float vitessaut ;//= 8.0f ;
     public float vitesstourne ;//= -1.5f;
+    public GameObject roquettep;
     Rigidbody2D joueurephy ;
     GameObject rotator;
     bool touchsol = false ;
@@ -16,7 +17,7 @@ public class joeurcube : MonoBehaviour
         {
             return false ;
         }
-        else 
+        else
         {
             float distance = Mathf.Abs(touchesol.point.y - transform.position.y);
             return distance < 0.33f ;
@@ -36,8 +37,7 @@ public class joeurcube : MonoBehaviour
         //   RaycastHit2D rtouchesol = Physics2D.Raycast( joueurephy.transform.position , Vector2.down , 1.0f , LayerMask.GetMask("soll") );
         //   touchsol = doestouchsol(rtouchesol);
         if (Input.GetKey(KeyCode.Space) && touchsol ) //quand on touche espace et le sol
-        { 
-            
+        {            
             Vector2 bougey = joueurephy.velocity  ;
             bougey[1] = vitessaut;
             joueurephy.velocity = bougey;
@@ -73,5 +73,20 @@ public class joeurcube : MonoBehaviour
     {
         if( sol.tag == "sol")
             touchsol = true;  
+
+        if( sol.tag == "roquettep")
+        {
+            spawnroquette();
+        }
+    }
+    bool checkroquette = true;
+    void spawnroquette()
+    {
+        if (checkroquette)
+        {
+            checkroquette = false;
+            Destroy(gameObject);
+            Instantiate(roquettep, transform.position,  transform.rotation);
+        }
     }
 }

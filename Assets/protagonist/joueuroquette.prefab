@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -2050284974588348263}
   - component: {fileID: -8922862056542832472}
   m_Layer: 0
-  m_Name: joueur 2
+  m_Name: joueuroquette
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -50,7 +50,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 2
-  m_LinearDrag: 1
+  m_LinearDrag: 5
   m_AngularDrag: 0
   m_GravityScale: 2
   m_Material: {fileID: 0}
@@ -112,12 +112,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2fab4bd4df4526c4290855029e9a48d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vitessaut: 0
-  vitesseh: 0
-  vitesstourne: 0
+  vitesseh: 5
   estmort: 0
-  joueurexplosion: {fileID: 0}
-  nbessais: {fileID: 0}
+  joueurexplosion: {fileID: 8832471321394929755, guid: 3912b3ea84029f248a0d0b065e408da8, type: 3}
 --- !u!114 &-8922862056542832472
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,6 +127,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a66dfd68cae37241918296b775d6d4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  accverticale: 10
+  anglemax: 60
+  vitessemax: 5
+  cube: {fileID: 591322749748138410, guid: 17ebb08fc44b1dc4594ac1eadee6e951, type: 3}
 --- !u!1 &1603615096182403340
 GameObject:
   m_ObjectHideFlags: 0

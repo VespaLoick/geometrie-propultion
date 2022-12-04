@@ -5,7 +5,7 @@ using UnityEngine;
 public class camera_follow : MonoBehaviour
 {
     // Start is called before the first frame update
-
+    public float decalagearriere = 4;
     GameObject joeur; 
   
     void Start()
@@ -19,10 +19,9 @@ public class camera_follow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(joeur != null)
+        if(joeur)
         {
-            Vector2 deblacement = joeur.transform.position;
-            deblacement[1] = transform.position.y;
+            Vector2 deblacement = new Vector2(joeur.transform.position.x + decalagearriere , transform.position.y );           
             transform.position = deblacement;
         }
         else
@@ -31,13 +30,8 @@ public class camera_follow : MonoBehaviour
             if (joeurtmptab[0] != null) //
             {
                 joeur = joeurtmptab[0];
-            }
-            else
-            {
-                joeur= null;
-            }
+            }            
         }
-
     }
 
 
