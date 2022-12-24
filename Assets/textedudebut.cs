@@ -18,6 +18,6 @@ public class textedudebut : MonoBehaviour
         {
             nbessais++;
         }
-        GetComponent<TextMesh>().text = ("nombre d'essaies : " + nbessais);
+        GetComponent<TextMesh>().text = ("nombre d'essais : " + nbessais);
     }
 }
